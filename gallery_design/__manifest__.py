@@ -18,12 +18,14 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['stock_delivery','base'],
 
     # always loaded
     'data': [
-        'gallery_design/views/res_config_settings.xml',
-        
-    ]
+        'views/res_config_settings.xml',   
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3'
 }
 
