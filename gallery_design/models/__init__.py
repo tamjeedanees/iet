@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
 from . import (
-    res_config_settings, product_template, sales_order
+    res_config_settings, product_template, sales_order, stock_valuation_layer
 )

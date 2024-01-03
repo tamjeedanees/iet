@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_stock_valuation_analysis_form" model="ir.ui.view">
+        <field name="name">stock.valuation.analysis.form</field>
+        <field name="model">stock.valuation.analysis</field>
+        <field name="arch" type="xml">
+            <form string="Stock Valuation Analysis">
+                <group>
+                    <group name="start_and_end_date" string="SELECT PROPER DATE TO FILTER TRANSACTIONS">
+                        <field name="start_date" />
+                        <field name="end_date" />
+                    </group>
+                    <group name="products_and_categories" string="PRODUCTS AND CATEGORIES">
+                        <field name="product_id" widget="many2many_tags" />
+                        <field name="product_category_id" widget="many2many_tags" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="view_data" string="View Data" type="object" class="btn-primary"
+                        data-hotkey="q" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_valuation_analysis" model="ir.actions.act_window">
+        <field name="name">Stock Valuation Analysis</field>
+        <field name="res_model">stock.valuation.analysis</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="menu_stock_valuation_analysis"
+        name="Stock Valuation Analysis"
+        parent="stock.menu_warehouse_report"
+        sequence="261"
+        action="action_stock_valuation_analysis" />
+
+</odoo>

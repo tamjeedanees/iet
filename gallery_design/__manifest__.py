@@ -22,7 +22,10 @@ Long description of module's purpose
 
     # always loaded
     'data': [
-        'views/res_config_settings.xml',   
+        'security/ir.model.access.csv',
+        'views/res_config_settings.xml',
+        'views/stock_valuation_layer.xml',
+        'wizard/stock_valuation_analysis.xml', 
     ],
     'installable': True,
     'application': True,
