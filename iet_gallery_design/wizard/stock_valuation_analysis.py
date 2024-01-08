@@ -73,15 +73,15 @@ class StockValuationAnalysis(models.TransientModel):
                     "val_receipt": val_receipt,
                     "qty_issue": qty_issue,
                     "val_issue": val_issue,
-                    "qty_end": (qty_beginning + qty_receipt) - qty_issue,
-                    "val_end": (val_beginning + val_receipt) - val_issue
+                    "qty_end": (qty_beginning + qty_receipt) - abs(qty_issue),
+                    "val_end": (val_beginning + val_receipt) - abs(val_issue)
                 })
 
         return report_data
 
     def view_data(self):
         view_mode = 'tree'
-        tree_view_id = self.env.ref('gallery_design.stock_valuation_layer_report_tree').id
+        tree_view_id = self.env.ref('iet_gallery_design.stock_valuation_layer_report_tree').id
 
         # Remove all existing records from 'stock.valuation.layer.report'
         existing_records = self.env['stock.valuation.layer.report'].sudo().search([])
